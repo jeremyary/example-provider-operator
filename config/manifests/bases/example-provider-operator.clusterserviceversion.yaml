@@ -1,0 +1,47 @@
+apiVersion: operators.coreos.com/v1alpha1
+kind: ClusterServiceVersion
+metadata:
+  annotations:
+    alm-examples: '[]'
+    capabilities: Basic Install
+  name: example-provider-operator.v0.0.0
+  namespace: placeholder
+spec:
+  apiservicedefinitions: {}
+  customresourcedefinitions:
+    owned:
+    - description: ClusterScopedResource is the Schema for the clusterscopedresources API
+      displayName: Cluster Scoped Resource
+      kind: ClusterScopedResource
+      name: clusterscopedresources.resource.acme.com
+      version: v1alpha1
+  description: demonstrates provider resource create/cleanup
+  displayName: Example Provider Operator
+  icon:
+  - base64data: ""
+    mediatype: ""
+  install:
+    spec:
+      deployments: null
+    strategy: ""
+  installModes:
+  - supported: false
+    type: OwnNamespace
+  - supported: false
+    type: SingleNamespace
+  - supported: false
+    type: MultiNamespace
+  - supported: true
+    type: AllNamespaces
+  keywords:
+  - dbaas
+  links:
+  - name: Example Provider Operator
+    url: https://example-provider-operator.domain
+  maintainers:
+  - email: jary@redhat.com
+    name: Jeremy
+  maturity: alpha
+  provider:
+    name: jary
+  version: 0.0.0

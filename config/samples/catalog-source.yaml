@@ -1,0 +1,9 @@
+apiVersion: operators.coreos.com/v1alpha1
+kind: CatalogSource
+metadata:
+  name: example-provider-operator
+  namespace: openshift-marketplace
+spec:
+  sourceType: grpc
+  image: quay.io/jary/example-provider-operator-catalog:v0.0.1
+  displayName: Example Provider Operator

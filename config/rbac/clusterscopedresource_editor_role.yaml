@@ -1,0 +1,24 @@
+# permissions for end users to edit clusterscopedresources.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: clusterscopedresource-editor-role
+rules:
+- apiGroups:
+  - resource.acme.com
+  resources:
+  - clusterscopedresources
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - resource.acme.com
+  resources:
+  - clusterscopedresources/status
+  verbs:
+  - get
